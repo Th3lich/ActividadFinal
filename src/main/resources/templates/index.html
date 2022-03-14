@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Actividad final</title>
+</head>
+<body>
+	<h5 th:inline="text">Hola '[[${user.getFullName()}]]'  ([[${user.username}]]), 
+	tu rol es [[${user.rol.rol}]]. </h5>
+	
+	<b>INICIO:</b> Actividad final <b>APP</b>.
+	<ul> MENÚ:
+		<li th:if="${user.rol.rol == 'ADMIN'}"> <a href="/app/list_subjects">Listar asignaturas</a></li>
+		<li> <a href="/app/list_users?rol=0">Listar usuarios</a></li>
+		<li> <a href="/app/h2-console" target="_blank">H2</a></li>
+	</ul>
+</body>
+</html>

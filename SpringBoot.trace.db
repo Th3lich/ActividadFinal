@@ -1,0 +1,15 @@
+2022-03-14 12:11:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EMPLEADO" not found; SQL statement:
+insert into empleado (id, name, apellidos) select 1, 'Rocío', 'De la O' from dual where not exists (select 1 from empleado where id = 1) [42102-200]
+2022-03-14 12:35:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+insert into usuario (username, firstname, surnames, password, rol_id) select 'admin', 'Javier', 'López López', '$2a$10$5xOe75pbLcAjp0TbVWaluunrSshgYdH82YNwGd.b0Os4hAWbIEkry', 1 from dual where not exists (select 1 from usuario where username = 'admin') [42102-200]
+2022-03-14 12:38:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EXTRAUSERDATA" not found; SQL statement:
+insert into extrauserdata (username, firstname, surnames, password, rol_id) select 'admin', 'Javier', 'López López', '$2a$10$5xOe75pbLcAjp0TbVWaluunrSshgYdH82YNwGd.b0Os4hAWbIEkry', 1 from dual where not exists (select 1 from extrauserdata where username = 'admin') [42102-200]
+2022-03-14 12:39:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EXTRAUSERDATA" not found; SQL statement:
+insert into extrauserdata (username, firstname, surnames, password, rol_id) select 'admin', 'Javier', 'López López', '$2a$10$5xOe75pbLcAjp0TbVWaluunrSshgYdH82YNwGd.b0Os4hAWbIEkry', 1 from dual where not exists (select 1 from extrauserdata where username = 'admin') [42102-200]
+2022-03-14 12:39:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EXTRAUSERDATA" not found; SQL statement:
+insert into extrauserdata (username, firstname, surnames, password, rol_id) select 'admin', 'Javier', 'López López', '$2a$10$5xOe75pbLcAjp0TbVWaluunrSshgYdH82YNwGd.b0Os4hAWbIEkry', 1 from dual where not exists (select 1 from extrauserdata where username = 'admin') [42102-200]

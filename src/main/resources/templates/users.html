@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de usuarios</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h4>Lista de usuarios:</h4>
+	<form method="GET">
+		<select name="rol">
+			<option value="0">Todos</option>
+			<option th:each="rol:${roles}" th:value=${rol.id}><span th:text=${rol.rol}></span></option>
+		</select>
+		<input type="submit" value="Filtrar"/>
+	</form>
+	<table border='1'>
+		<th:block th:each="per : ${users}">
+			<tr>
+				<td th:text="${per.username}"></td>
+				<td th:text="${per.firstname}"></td>
+				<td th:text="${per.surnames}"></td>
+				<td th:text="${per.rol.rol}"></td>
+			</tr>
+		</th:block>	
+	</table> 
+	<br/>
+	</body>
+</html>
