@@ -48,11 +48,15 @@ public class SubjectRestController {
 	
 	@GetMapping (value="/{id}")
 	public ResponseEntity<Subject> getSubject(@PathVariable("id") Integer id) {
-		Subject subject = subjectService.getById(id);
-		if (subject != null) {
-			return new ResponseEntity<> (subject, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<> (null, HttpStatus.NOT_FOUND);
+		try {
+			Subject subject = subjectService.getById(id);
+			if (subject != null) {
+				return new ResponseEntity<> (subject, HttpStatus.OK);
+			} else {
+				return new ResponseEntity<> (null, HttpStatus.NOT_FOUND);
+			}
+		} catch (Exception ex) {
+			return new ResponseEntity<> (null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
