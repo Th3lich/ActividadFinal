@@ -19,7 +19,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	UserDetailsService userService;
 	
-	String[] resources = new String[] { "/include/**", "/js/**", "/css/**"};
+	String[] resources = new String[] { "/include/**", "/js/**", "/css/**", "/api/**"};
 	
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();

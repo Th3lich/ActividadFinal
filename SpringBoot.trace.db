@@ -13,3 +13,6 @@ insert into extrauserdata (username, firstname, surnames, password, rol_id) sele
 2022-03-14 12:39:14 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EXTRAUSERDATA" not found; SQL statement:
 insert into extrauserdata (username, firstname, surnames, password, rol_id) select 'admin', 'Javier', 'López López', '$2a$10$5xOe75pbLcAjp0TbVWaluunrSshgYdH82YNwGd.b0Os4hAWbIEkry', 1 from dual where not exists (select 1 from extrauserdata where username = 'admin') [42102-200]
+2022-03-15 12:52:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SUBJECT" not found; SQL statement:
+insert into subject (id, name, description, course) select 1, 'Matemáticas', 'Desc 1', 1 from dual where not exists (select 1 from subject where id = 1) [42102-200]
