@@ -1,5 +1,7 @@
 package com.nttdata.actividadfinal.repository.entity;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -58,5 +60,21 @@ public class Subject {
 	public void setCourse(Integer course) {
 		this.course = course;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Subject other = (Subject) obj;
+		return Objects.equals(id, other.id);
+	}
 }

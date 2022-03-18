@@ -2,6 +2,8 @@ package com.nttdata.actividadfinal.repository.entity;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -99,5 +101,22 @@ public class User implements UserDetails {
 
 	public void setRol(Rol rol) {
 		this.rol = rol;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(username);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(username, other.username);
 	}
 }

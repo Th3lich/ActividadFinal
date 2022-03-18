@@ -1,5 +1,7 @@
 package com.nttdata.actividadfinal.repository.entity;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -43,5 +45,21 @@ public class Rol implements GrantedAuthority {
 	public String getAuthority() {
 		return ("ROLE_" + this.rol).toUpperCase();
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Rol other = (Rol) obj;
+		return Objects.equals(id, other.id);
+	}
 }
